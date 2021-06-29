@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         var vm = ViewModelProvider(this)[HomeViewModel::class.java]
 
+
         initAdapter()
 
         vm.fetchAllPosts()
@@ -36,6 +37,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
             progress_home.visibility = View.GONE
+            println(vm.postModelListLiveData)
+
         })
 
     }
